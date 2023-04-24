@@ -1,1 +1,70 @@
-$red-color: rgba(255, 0, 0, 0.637);
+$blue-color: #3F51B5;
+$blue-light-color: #3f51b5b9;
+$grey-color: #f8f8f8;
+$shadow-1: rgb(0 0 0 / 18%) 2px 4px 20px 6px;
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.btn_primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: $blue-color;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.btn_outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: $blue-color;
+    background: #fff;
+    border: 1px solid $blue-color;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.input {
+    border: 1px solid $blue-light-color;
+    outline: none;
+    background: transparent;
+    padding-left: 1rem;
+
+    &:focus {
+        border-color: $blue-color;
+    }
+}
+
+.success {
+    margin-top: 10px;
+    background: rgb(76 175 80 / 22%);
+    padding: 10px;
+    border-radius: 30px;
+    color: #4caf50;
+}
+
+.error {
+    margin-top: 10px;
+    background: #ff000036;
+    padding: 10px;
+    border-radius: 30px;
+    color: red;
+}
