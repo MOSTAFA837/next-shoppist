@@ -16,7 +16,7 @@ export default function UserMenu({ loggedIn }) {
             <div className={styles.col}>
               <span>Welcome Back,</span>
               <h3>Mostafa</h3>
-              <span onClick={() => signOut()}>Sign out</span>
+              <span>Sign out</span>
             </div>
           </div>
 
