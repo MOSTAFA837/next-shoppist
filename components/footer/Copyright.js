@@ -15,13 +15,6 @@ export default function Copyright() {
               <Link href={item.link}>{item.name}</Link>
             </li>
           ))}
-
-          <li>
-            <a href="/">
-              <CiLocationOn />
-              Egypt
-            </a>
-          </li>
         </ul>
       </section>
     </div>
