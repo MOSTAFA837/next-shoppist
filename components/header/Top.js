@@ -6,10 +6,11 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import { useState } from "react";
 import UserMenu from "./UserMenu";
+import { useSession } from "next-auth/react";
 
 export default function Top() {
-  const [loggedIn, setLoggedIn] = useState(true);
   const [visible, setVisible] = useState(false);
+  const { data: session } = useSession();
 
   return (
     <div className={styles.top}>
@@ -42,11 +43,11 @@ export default function Top() {
             onMouseEnter={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}
           >
-            {loggedIn ? (
+            {session ? (
               <li className={styles.li}>
                 <div className={styles.flex}>
                   <RiAccountPinCircleLine />
-                  <span>Mostafa</span>
+                  <span>{session.user.name.split(" ")[0]}</span>
                   <RiArrowDropDownFill />
                 </div>
               </li>
@@ -60,7 +61,7 @@ export default function Top() {
               </li>
             )}
 
-            {visible && <UserMenu loggedIn={loggedIn} />}
+            {visible && <UserMenu session={session} />}
           </li>
         </ul>
       </div>
