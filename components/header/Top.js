@@ -46,7 +46,8 @@ export default function Top() {
             {session ? (
               <li className={styles.li}>
                 <div className={styles.flex}>
-                  <RiAccountPinCircleLine />
+                  {/* <RiAccountPinCircleLine /> */}
+                  <img src={session.user.image} alt="" />
                   <span>{session.user.name.split(" ")[0]}</span>
                   <RiArrowDropDownFill />
                 </div>

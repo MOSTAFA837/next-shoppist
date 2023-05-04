@@ -8,12 +8,11 @@ export default function UserMenu({ session }) {
       {session ? (
         <>
           <div className={styles.flex}>
-            <img src={session.user.image} alt="" className={styles.menu__img} />
+            {/* <img src={session.user.image} alt="" className={styles.menu__img} /> */}
 
             <div className={styles.col}>
               <span>Welcome Back,</span>
               <h3>{session.user.name}</h3>
-              <span onClick={() => signOut()}>Sign out</span>
             </div>
           </div>
 
@@ -37,6 +36,8 @@ export default function UserMenu({ session }) {
             <li>
               <Link href="/profile/whishlist">Whishlist</Link>
             </li>
+
+            <li onClick={() => signOut()}>Sign out</li>
           </ul>
         </>
       ) : (

@@ -128,13 +128,20 @@
     ul {
         li {
             height: 30px;
+            width: 100%;
+            padding-left: 1rem;
 
-            a {
-                width: 100%;
-                padding-left: 1rem;
+            &:last-of-type {
+                background: rgba(255, 0, 0, 0.24);
+                color: rgba(255, 0, 0, 0.856);
+
+                &:hover {
+                    background: rgba(255, 0, 0, 0.349);
+                    color: rgba(255, 0, 0, 0.966);
+                }
             }
 
-            &:hover {
+            &:hover:not(:last-of-type) {
                 background: #a5a5a56e;
                 color: #222;
                 border-radius: 2px;
@@ -152,13 +159,14 @@
         display: flex;
         flex-direction: column;
 
-        span {
-            &:last-of-type {
-                font-size: 14px;
-                color: $blue-color;
-                text-decoration: underline;
-            }
-        }
+        // span {
+        //     &:last-of-type {
+        //         font-size: 14px;
+        //         color: $blue-color;
+        //         text-decoration: underline;
+        //     }
+        // }
+   
     }
 }
 
@@ -207,6 +215,8 @@
             place-items: center;
             background: $blue-color;
             cursor: pointer;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
 
             svg {
                 width: 21px;

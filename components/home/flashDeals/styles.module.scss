@@ -1,0 +1,129 @@
+.flashDeals {
+    margin: 1rem 0;
+    background-color: #fff;
+
+    &__header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        font-weight: 900;
+        font-size: 25px;
+        text-transform: uppercase;
+        background: $red-color;
+        margin-bottom: 10px;
+
+        @media (max-width: 610px) {
+            font-size: 18px;
+        }
+
+        @media (max-width: 508px) {
+            font-size: 15px;
+        }
+
+        @media (max-width: 464px) {
+            flex-direction: column;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 1rem;
+
+        @media (max-width: 600px) {
+            justify-content: center;
+        }
+    }
+}
+
+.card {
+    height: 420px;
+    width: 283px;
+    margin: auto;
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .flash {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50px;
+            height: 65px;
+            background-color: $red-color;
+
+            span {
+                color: #fff;
+                font-weight: 600;
+                font-size: 18px;
+                transform: translateY(18px);
+            }
+
+            svg {
+                position: absolute;
+                transform: scale(2);
+                fill: #ffebeb;
+            }
+        }
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 2px;
+
+        span {
+            font-weight: 700;
+
+            &:first-of-type {
+                color: #2b2a2a;
+            }
+
+            &:last-of-type {
+                color: #1a1a1a;
+                font-size: 14px;
+                font-weight: normal;
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    &__bar {
+        width: 100%;
+        height: 10px;
+        border-radius: 10px;
+        background: #1a1a1a;
+        margin: 2px;
+
+        &_inner {
+            background-color: $red-color;
+            border-radius: 10px;
+            height: 100%;
+        }
+    }
+
+    &__percentage {
+        font-size: 14px;
+        color: #111;
+        margin-top: 2px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
