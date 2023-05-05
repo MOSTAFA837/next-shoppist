@@ -14,8 +14,6 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 
 import { BiLeftArrowAlt } from "react-icons/bi";
-import { SiAuth0, SiGnuprivacyguard } from "react-icons/si";
-import { BsFacebook, BsGoogle } from "react-icons/bs";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import CircledIconBtn from "../components/buttons/circledIconBtn";
@@ -210,23 +208,27 @@ export default function signin({ providers, csrfToken, callbackUrl }) {
               <span className={styles.or}>Or continue signing whith</span>
 
               <div className={styles.login__socials_wrap}>
-                {providers.map((provider) => {
-                  if (provider.name == "Credentials") {
-                    return;
-                  }
+                {providers &&
+                  providers.map((provider) => {
+                    if (provider.name == "Credentials") {
+                      return;
+                    }
 
-                  return (
-                    <div key={provider.id} className={styles.social__btn_wrap}>
-                      <button
-                        className={styles.social__btn}
-                        onClick={() => signIn(provider.id)}
+                    return (
+                      <div
+                        key={provider.id}
+                        className={styles.social__btn_wrap}
                       >
-                        <img src={`images/icons/${provider.id}.png`} alt="" />
-                        {provider.name}
-                      </button>
-                    </div>
-                  );
-                })}
+                        <button
+                          className={styles.social__btn}
+                          onClick={() => signIn(provider.id)}
+                        >
+                          <img src={`images/icons/${provider.id}.png`} alt="" />
+                          {provider.name}
+                        </button>
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           </div>

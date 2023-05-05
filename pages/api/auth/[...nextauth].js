@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import AppleProvider from "next-auth/providers/apple";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
 import Auth0Provider from "next-auth/providers/auth0";
@@ -55,6 +54,7 @@ export default NextAuth({
 
       session.user.id = token.sub || user._id.toString();
       session.user.role = user.role || "user";
+      // token.role = user.role || "user";
 
       return session;
     },
