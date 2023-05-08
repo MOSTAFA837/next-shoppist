@@ -5,9 +5,11 @@ import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 
 import cart from "./cartSlice";
+import expandSidebar from "./expandSlice";
 
 const reducers = combineReducers({
   cart,
+  expandSidebar,
 });
 
 const config = {

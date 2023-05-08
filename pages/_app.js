@@ -3,6 +3,8 @@ import store from "@/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import { SessionProvider } from "next-auth/react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "../styles/globals.scss";
 import Head from "next/head";
@@ -28,6 +30,17 @@ export default function App({
             <Component {...pageProps} />
           </PersistGate>
         </Provider>
+
+        <ToastContainer
+          autoClose={5000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          newestOnTop={false}
+          theme="colored"
+        />
       </SessionProvider>
     </>
   );
